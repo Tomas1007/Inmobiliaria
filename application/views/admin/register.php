@@ -33,7 +33,7 @@
       <input type="text" id="nombre" class="fadeIn second" name="nombre" placeholder="Nombre">
       <input type="text" id="apellido" class="fadeIn third" name="apellido" placeholder="Apellido">
       <input type="text" id="email" class="fadeIn third" name="email" placeholder="Email">
-      <input type="text" id="contrasenia" class="fadeIn third" name="contrasenia" placeholder="Contraseña">
+      <input type="password" id="contrasenia" class="fadeIn third" name="contrasenia" placeholder="Contraseña">
       <input type="submit" class="fadeIn fourth" value="Registrarse">
     </form>
 

@@ -7,22 +7,36 @@ class Auth extends CI_Controller {
 		parent::__construct();
 		$this->load->model("Users_model");
 	}
-	public function index()
+	/*public function index()
 	{
 		if ($this->session->userdata("login")) {
 			redirect(base_url()."dashboard");
 		}
 		else{
 			$this->load->view("admin/login");
+		}*/
+
+		public function index(){
+			if ($this->session->userdata("login")) {
+				$rol_id = $this->session->userdata("user_role");
+
+			if ($rol_id == 2) {
+					redirect(base_url()."userview");
+				} elseif ($rol_id == 1) {
+					redirect(base_url()."dashboard");
+				}
+			} else {
+				$this->load->view("admin/login");
+			}
 		}
 		
-	}
+	
 
 	public function login(){
 		$email = $this->input->post("email");
 		$contrasenia = $this->input->post("contrasenia");
 		$res = $this->Users_model->login($email, $contrasenia);
-		echo print_r("ingreso bien");
+		//echo print_r("ingreso bien");
 
 		if (!$res) {
 			$this->session->set_flashdata("error","El usuario y/o contraseña son incorrectos");
@@ -31,13 +45,18 @@ class Auth extends CI_Controller {
 		else{
 			$data  = array(
 				'id' => $res->id, 
-				'nombre' => $res->nombres,
-				'rol' => $res->rol_id,
+				'nombre' => $res->nombre,
+				'rol' => $res->$rol_user,
 				'login' => TRUE
 			);
 			$this->session->set_userdata($data);
-			redirect(base_url()."dashboard");
+			if ($res->rol_user == 2) {
+				redirect(base_url() . "controllers/userview");
+			} elseif ($res->rol_user == 1) {
+				redirect(base_url() . "controllers/dashboard");
+			}
 		}
+		
 	}
 
 	public function logout(){

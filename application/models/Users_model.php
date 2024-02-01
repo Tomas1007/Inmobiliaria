@@ -18,14 +18,8 @@ class Users_model extends CI_Model {
 			return false;
 		}
 	}
-	public function register($nombre, $apellido,$email, $contrasenia){
-			$data = array(
-				'nombre' => $nombre,
-				'apellido' => $apellido,
-				'email' => $email,
-				'contrasenia' => password_hash($contrasenia, PASSWORD_BCRYPT),
-				'estado' => 1
-			);
+
+	public function register($data){
 	
 			$this->db->insert('users', $data);
 			
@@ -34,15 +28,10 @@ class Users_model extends CI_Model {
 	}
 
 
-	/*public function getUsers(){
-		$this->db->where("estado","1");
-		$resultados = $this->db->get("users");
-		return $resultados->result();
-	}*/
-
 	public function save($data){
 		return $this->db->insert("users",$data);
 	}
+
 	public function getUser($id){
 		$query = $this->db->query("SELECT * FROM `users` WHERE id = $id AND estado = 1;");
 		if($query->num_rows() > 0){
