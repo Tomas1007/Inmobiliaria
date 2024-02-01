@@ -46,14 +46,14 @@ class Auth extends CI_Controller {
 			$data  = array(
 				'id' => $res->id, 
 				'nombre' => $res->nombre,
-				'rol' => $res->$rol_user,
+				'rol' => $res->rol_user,
 				'login' => TRUE
 			);
 			$this->session->set_userdata($data);
 			if ($res->rol_user == 2) {
-				redirect(base_url() . "controllers/userview");
+				redirect(base_url() . "userview");
 			} elseif ($res->rol_user == 1) {
-				redirect(base_url() . "controllers/dashboard");
+				redirect(base_url() . "dashboard");
 			}
 		}
 		

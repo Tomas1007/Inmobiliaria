@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require_once APPPATH . 'controllers/clases/ProductosBase.php';
+
 
 class UserView extends CI_Controller {
 
@@ -11,8 +11,7 @@ class UserView extends CI_Controller {
 			redirect(base_url());
 		}
 	}
-	public function index()
-	{
+	public function index(){
 		
 		$this->load->view("layouts/layout-user/header");
 	
