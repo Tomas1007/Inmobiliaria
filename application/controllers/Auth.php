@@ -14,11 +14,13 @@ class Auth extends CI_Controller {
 		}
 		else{
 			$this->load->view("admin/login");
-		}*/
+		}
+	}*/
+		
 
 		public function index(){
 			if ($this->session->userdata("login")) {
-				$rol_id = $this->session->userdata("user_role");
+				$rol_id = $this->session->userdata("rol");
 
 			if ($rol_id == 2) {
 					redirect(base_url()."userview");
@@ -56,7 +58,6 @@ class Auth extends CI_Controller {
 				redirect(base_url() . "dashboard");
 			}
 		}
-		
 	}
 
 	public function logout(){
@@ -64,8 +65,8 @@ class Auth extends CI_Controller {
 		redirect(base_url());
 	}
 
-	public function register(){
+	/*ublic function register(){
 		parent::__construct();
 
-	}
+	}*/
 }

@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/template/font-awesome/css/font-awesome.min.css">
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/template/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/login.css">
 </head>
 
@@ -50,9 +49,6 @@
 </div>
 
 <!-- jQuery 3 -->
-<script src="<?php echo base_url();?>assets/template/jquery/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url();?>assets/template/bootstrap/js/bootstrap.min.js"></script>
 
 
 </html>

@@ -9,6 +9,13 @@ class Dashboard extends CI_Controller {
 		if (!$this->session->userdata("login")) {
 			redirect(base_url());
 		}
+		$rol_id = $this->session->userdata("rol");
+	
+		// Aplicar lógica de verificación de rol
+		if ($rol_id == 2) {
+			// Si el rol no es el esperado (por ejemplo, si no es 1), redirige o maneja el acceso no autorizado.
+			redirect(base_url()); // Puedes redirigir a otra página o mostrar un mensaje de error, según tus necesidades.
+		}
 	}
 	
 	public function index()

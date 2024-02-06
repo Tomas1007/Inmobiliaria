@@ -31,7 +31,8 @@
       <ul>
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Acerca de</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#"><span><?php echo $this->session->userdata("nombre")?></span></a></li>
+        <li><a href="<?php echo base_url(); ?>auth/logout">Salir</a></li>
       </ul>
     </nav>
   </header>
