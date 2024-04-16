@@ -11,19 +11,18 @@ class Imagenes extends CI_Controller {
 
     public function cargaImagenes(){
         
-        $this->load->view("layouts/header");
-        $this->load->view("layouts/aside");
+        $this->load->view("layouts/layout-user/headerr");
+        $this->load->view("layouts/layout-user/asidee");
         $this->load->view("admin/inmuebles/imagenes");
-        $this->load->view("layouts/footer");
+        $this->load->view("layouts/layout-user/footerr");
     }
    
-   public function subirImagenes() {
+    public function subirImagenes() {
         $inmuebleId = $this->input->cookie('inmueble_id');
     
         $config['upload_path'] = './assets/images/uploads';
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
-       // $config['max_size'] = 2048;
-    
+        // $config['max_size'] = 2048;
         $this->load->library('upload', $config);
     
         $imagen_data = array();
@@ -46,6 +45,10 @@ class Imagenes extends CI_Controller {
                         'nombre' => $fileName,
                         'inmueble_id' => $inmuebleId
                     );
+                } else {
+                    // Mostrar errores de carga de archivos
+                    $error = $this->upload->display_errors();
+                    echo "Error al subir la imagen: $error";
                 }
             }
         }
@@ -53,9 +56,9 @@ class Imagenes extends CI_Controller {
         // Guarda las imagenes en la base de datos
         if (!empty($imagen_data)) {
             $this->Imagen_model->saveImagesBatch($imagen_data);
+            redirect('mantenimiento/imagenPortada/cargaPortada/');
+        } else {
+            echo "No se pudo cargar las imagenes";
         }
-        redirect('mantenimiento/imagenPortada/cargaPortada/');
-    
     }
-
 }

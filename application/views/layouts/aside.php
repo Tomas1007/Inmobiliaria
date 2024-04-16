@@ -18,7 +18,7 @@
           <li class="nav-item nav-category">Mis inmuebles</li>
       
           <li class="nav-item">
-            <a class="nav-link"  href="<?php echo base_url();?>mantenimiento/inmueble" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link"  href="<?php echo base_url();?>inmuebleCon" aria-expanded="false" aria-controls="form-elements">
               <i class="menu-icon mdi mdi-card-text-outline"></i>
               <span class="menu-title">Inmuebles</span>
               <i class="menu-arrow"></i>

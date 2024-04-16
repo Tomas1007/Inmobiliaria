@@ -7,8 +7,8 @@ class Inmueble extends CI_Controller {
         parent::__construct();
 		$this->load->library('session');
         $this->load->model("Inmueble_model");
-		$this->load->model('Comentario_model');
-		$this->load->model("Imagen_model");
+		//$this->load->model('Comentario_model');
+		//$this->load->model("Imagen_model");
     }
 	public function index()
 		{
@@ -31,19 +31,20 @@ class Inmueble extends CI_Controller {
 			'imagenes'=> $this->Imagen_model->getImagesByInmuebleId($inmuebleId)
 	);        		
 
-		$this->load->view("layouts/header");
-		$this->load->view("layouts/aside");
+		$this->load->view("layouts/layout-user/headerr");
 		$this->load->view("admin/inmuebles/inmuebleById", $data);
-		$this->load->view("layouts/footer");
+		$this->load->view("layouts/layout-user/footerr");
 	}
 
 
 	public function add(){
 
-		$this->load->view("layouts/header");
-		$this->load->view("layouts/aside");
-		$this->load->view("admin/inmuebles/add");
-		$this->load->view("layouts/footer");
+		$this->load->view("layouts/layout-user/headerr");
+		$this->load->view("layouts/layout-user/asidee");
+		$this->load->view("layouts/layout-user/body");
+		$this->load->view("layouts/layout-user/footerr");
+
+		
 	}
 
 	public function store(){
@@ -56,8 +57,7 @@ class Inmueble extends CI_Controller {
 		$ubicacion = $this->input->post("ubicacion");
 		$parrilla = $this->input->post("parrilla") ? 1 : 0; // 1 si está marcado, 0 si no
 		$pileta = $this->input->post("pileta") ? 1 : 0;
-		//$parrilla = $this->input->post("parrilla");
-		//$pileta = $this->input->post("pileta");
+	
 
 		$data  = array(
             'titulo'=>$titulo,
@@ -79,7 +79,7 @@ class Inmueble extends CI_Controller {
 			);
 			$this->input->set_cookie($cookie);
 
-		redirect("mantenimiento/imagenes/cargaImagenes/");
+		redirect("mantenimiento/Imagenes/cargaImagenes/");
 	
 	}
 

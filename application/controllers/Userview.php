@@ -5,6 +5,7 @@ class UserView extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model("Inmueble_model");
 		if (!$this->session->userdata("login")) {
 			redirect(base_url());
 		}
@@ -17,12 +18,14 @@ class UserView extends CI_Controller {
 		}
 	}
 
-
-
 	public function index(){
-		
-		$this->load->view("layouts/layout-user/header");
-	
-		$this->load->view("layouts/layout-user/footer");
+
+		/*$data  = array(
+			'inmuebles' => $this->Inmueble_model->getInmuebles(), 
+		);*/
+		$data  = array(
+			'inmuebles' => $this->Inmueble_model->getInmueblesConImagenPortada(), 
+		);
+		$this->load->view("layouts/layout-user/dashboard", $data);
 	}
 }

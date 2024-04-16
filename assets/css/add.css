@@ -1,0 +1,126 @@
+/* Restablecer estilos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  /* Encabezado */
+  header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Navegación */
+  .nav {
+    background-color: #eee;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav ul li {
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .nav ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .nav ul li a:hover {
+    color: #007bff;
+  }
+  
+  /* Contenedor principal */
+  .main-container {
+    display: flex;
+  }
+  
+  /* Contenido principal */
+  .main-content {
+   
+        flex: 1;
+        padding: 20px;
+        min-height: 100vh; /* 100vh represents 100% of the viewport height */
+      }
+.content_main{
+    margin-left: 160px;
+    font-size: 22px;
+    padding: 0 10px;
+}
+  
+  
+  /* Barra lateral */
+  .sidebar {
+    height: 85%;
+    width: 160px;
+    background-color: #f9f9f9;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding: 20px;
+  }
+  
+  .sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 5px;
+  }
+  
+  .sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #007bff;
+  }
+  
+  /* Pie de página */
+  footer {
+   
+        position:fixed;
+        left:0px;
+        bottom:0px;
+        height:90px;
+        width:100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        border-radius: 15px; /* Borde redondeado */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+     }
+     footer a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 1rem;
+      }
+    
+  
